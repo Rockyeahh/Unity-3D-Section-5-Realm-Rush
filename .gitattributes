@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Ignore all differences in line endings
+*        -crlf
+$ git rm -r --cached node_modules
+$ vi .gitignore
+--system core.longpaths true
