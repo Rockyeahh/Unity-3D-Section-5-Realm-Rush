@@ -23,6 +23,8 @@ public class CubeEditor : MonoBehaviour {
         transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
 
         textMesh = GetComponentInChildren<TextMesh>();
-        textMesh.text = snapPos.x / gridSize + "," + snapPos.z / gridSize; // It divides by grid size here so that you end up with whole numbers in the text.
+        string labelText = snapPos.x / gridSize + "," + snapPos.z / gridSize; // It divides by grid size here so that you end up with whole numbers in the text.
+        textMesh.text = labelText;
+        gameObject.name = "Block " + labelText;
         }
 }
