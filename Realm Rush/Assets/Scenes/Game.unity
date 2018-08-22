@@ -219,7 +219,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268462082448636, guid: 8485349f044de37458bd3617a3712aec, type: 2}
       propertyPath: m_Name
-      value: Cube 3,1
+      value: Block 3,1
       objectReference: {fileID: 0}
     - target: {fileID: 102487410482840190, guid: 8485349f044de37458bd3617a3712aec,
         type: 2}
@@ -281,7 +281,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268462082448636, guid: 8485349f044de37458bd3617a3712aec, type: 2}
       propertyPath: m_Name
-      value: Cube 3,2
+      value: Block 3,2
       objectReference: {fileID: 0}
     - target: {fileID: 102487410482840190, guid: 8485349f044de37458bd3617a3712aec,
         type: 2}
@@ -419,7 +419,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268462082448636, guid: 8485349f044de37458bd3617a3712aec, type: 2}
       propertyPath: m_Name
-      value: Cube 1,0
+      value: Block 1,0
       objectReference: {fileID: 0}
     - target: {fileID: 102487410482840190, guid: 8485349f044de37458bd3617a3712aec,
         type: 2}
@@ -481,7 +481,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268462082448636, guid: 8485349f044de37458bd3617a3712aec, type: 2}
       propertyPath: m_Name
-      value: Cube 2,0
+      value: Block 2,0
       objectReference: {fileID: 0}
     - target: {fileID: 102487410482840190, guid: 8485349f044de37458bd3617a3712aec,
         type: 2}
@@ -576,8 +576,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 999930689}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.36347964, y: 0.000000009332322, z: -0.0000000031354466,
+    w: -0.9316022}
+  m_LocalPosition: {x: 17.496489, y: 19.856363, z: -17.457157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -624,7 +625,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268462082448636, guid: 8485349f044de37458bd3617a3712aec, type: 2}
       propertyPath: m_Name
-      value: Cube 3,0
+      value: Block 3,0
       objectReference: {fileID: 0}
     - target: {fileID: 102487410482840190, guid: 8485349f044de37458bd3617a3712aec,
         type: 2}
@@ -709,7 +710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268462082448636, guid: 8485349f044de37458bd3617a3712aec, type: 2}
       propertyPath: m_Name
-      value: Cube 0,0
+      value: Block 0,0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8485349f044de37458bd3617a3712aec, type: 2}
