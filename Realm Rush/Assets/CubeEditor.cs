@@ -8,7 +8,7 @@ using UnityEngine;
 public class CubeEditor : MonoBehaviour {
 
     // old code [SerializeField] [Range (1f, 20f)] float gridSize = 10f; // Range restricts the values that can be set in the inspector to between 1 and 20 float.
-                                                                        // Why 20? Incase you need space for cubes smaller than 10f.
+    // Why 20? Incase you need space for cubes smaller than 10f.
 
     Waypoint waypoint;
 
