@@ -32,11 +32,12 @@ public class Pathfinder : MonoBehaviour {
     {
         queue.Enqueue(startWaypoint);
 
-        while (queue.Count > 0)
+        while (queue.Count > 0 && isRunning)
         {
             var searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
             print("Searching from:  " + searchCenter); // TODO: remove log later.
             HaltIfEndFound(searchCenter);
+            // explore neighbours
         }
 
         print("Finished pathfinding?");
