@@ -8,6 +8,9 @@ public class Pathfinder : MonoBehaviour {
     [SerializeField] Waypoint startWaypoint, endWaypoint;
 
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+    Queue<Waypoint> queue = new Queue<Waypoint>();
+    [SerializeField] bool isRunning = true; // make private LATER
+
     Vector2Int[] directions =
     {
         Vector2Int.up,
@@ -17,11 +20,37 @@ public class Pathfinder : MonoBehaviour {
     }; // Why is the ; here? How/why does it work here and not in other methods.
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         LoadBlocks();
         ColourStartAndEnd();
-        ExploreNeighbours();
-	}
+        Pathfind();
+        //ExploreNeighbours();
+    }
+
+    private void Pathfind()
+    {
+        queue.Enqueue(startWaypoint);
+
+        while (queue.Count > 0)
+        {
+            var searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
+            print("Searching from:  " + searchCenter); // TODO: remove log later.
+            HaltIfEndFound(searchCenter);
+        }
+
+        print("Finished pathfinding?");
+
+    }
+
+    private void HaltIfEndFound(Waypoint searchCenter)
+    {
+        if (searchCenter == endWaypoint)
+        {
+            print("Searching from end node, therefore stopping"); // DELETE later.
+            isRunning = false;
+        }
+    }
 
     private void ExploreNeighbours()
     {
