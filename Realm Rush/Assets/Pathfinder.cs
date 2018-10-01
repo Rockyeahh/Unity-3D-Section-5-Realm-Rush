@@ -9,7 +9,8 @@ public class Pathfinder : MonoBehaviour {
 
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
     Queue<Waypoint> queue = new Queue<Waypoint>();
-    [SerializeField] bool isRunning = true; // make private LATER
+    bool isRunning = true;
+    Waypoint searchCenter; // the current searchCenter
 
     Vector2Int[] directions =
     {
@@ -34,10 +35,9 @@ public class Pathfinder : MonoBehaviour {
 
         while (queue.Count > 0 && isRunning)
         {
-            var searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
-            print("Searching from:  " + searchCenter); // TODO: remove log later.
-            HaltIfEndFound(searchCenter);
-            ExploreNeighbours(searchCenter);
+            searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
+            HaltIfEndFound();
+            ExploreNeighbours();
             searchCenter.isExplored = true;
         }
 
@@ -46,23 +46,21 @@ public class Pathfinder : MonoBehaviour {
 
     }
 
-    private void HaltIfEndFound(Waypoint searchCenter)
+    private void HaltIfEndFound()
     {
         if (searchCenter == endWaypoint)
         {
-            print("Searching from end node, therefore stopping"); // DELETE later.
             isRunning = false;
         }
     }
 
-    private void ExploreNeighbours(Waypoint from)
+    private void ExploreNeighbours()
     {
         if (!isRunning){ return; } // Stops it from exploring neighbours when it's not running.
     
         foreach (Vector2Int direction in directions)
         {
-            Vector2Int neighbourCoordinates = from.GetGridPos() + direction; // Adds the current start position to the direction it can move in.
-            print("Exploring " + neighbourCoordinates); // prints the target space that the enemy will move to in that direction.
+            Vector2Int neighbourCoordinates = searchCenter.GetGridPos() + direction; // Adds the current start position to the direction it can move in.
             try
             {
                 QueueNewNeighbours(neighbourCoordinates);
@@ -77,15 +75,14 @@ public class Pathfinder : MonoBehaviour {
     private void QueueNewNeighbours(Vector2Int neighbourCoordinates)
     {
         Waypoint neighbour = grid[neighbourCoordinates];
-        if (neighbour.isExplored)
+        if (neighbour.isExplored || queue.Contains(neighbour))
         {
-            // do nothing or return;
-        }else 
+            // do nothing
+        }
+        else 
         {
-        neighbour.SetTopColour(Color.red); // grid is a dictionary that looks up exploration coordinates and then sets the colour to the possible cube directions.
-                                           // TODO: move set colour line later. The colour should be set somewhere else for tidyness sake.
         queue.Enqueue(neighbour);
-        print("Queueing " + neighbour);
+        neighbour.exploredFrom = searchCenter;
         }
     }
 
