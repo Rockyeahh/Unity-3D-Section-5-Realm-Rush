@@ -37,9 +37,11 @@ public class Pathfinder : MonoBehaviour {
             var searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
             print("Searching from:  " + searchCenter); // TODO: remove log later.
             HaltIfEndFound(searchCenter);
-            // explore neighbours
+            ExploreNeighbours(searchCenter);
+            searchCenter.isExplored = true;
         }
 
+        // TODO: Work out path!
         print("Finished pathfinding?");
 
     }
@@ -53,20 +55,37 @@ public class Pathfinder : MonoBehaviour {
         }
     }
 
-    private void ExploreNeighbours()
+    private void ExploreNeighbours(Waypoint from)
     {
+        if (!isRunning){ return; } // Stops it from exploring neighbours when it's not running.
+    
         foreach (Vector2Int direction in directions)
         {
-            Vector2Int explorationCoordinates = startWaypoint.GetGridPos() + direction; // Adds the current start position to the direction it can move in.
-            print("Exploring " + explorationCoordinates); // prints the target space that the enemy will move to in that direction.
+            Vector2Int neighbourCoordinates = from.GetGridPos() + direction; // Adds the current start position to the direction it can move in.
+            print("Exploring " + neighbourCoordinates); // prints the target space that the enemy will move to in that direction.
             try
             {
-                grid[explorationCoordinates].SetTopColour(Color.red); // grid is a dictionary that looks up exploration coordinates and then sets the colour to the possible cube directions.
+                QueueNewNeighbours(neighbourCoordinates);
             }
             catch
             {
                 // Do nothing for now.
             }
+        }
+    }
+
+    private void QueueNewNeighbours(Vector2Int neighbourCoordinates)
+    {
+        Waypoint neighbour = grid[neighbourCoordinates];
+        if (neighbour.isExplored)
+        {
+            // do nothing or return;
+        }else 
+        {
+        neighbour.SetTopColour(Color.red); // grid is a dictionary that looks up exploration coordinates and then sets the colour to the possible cube directions.
+                                           // TODO: move set colour line later. The colour should be set somewhere else for tidyness sake.
+        queue.Enqueue(neighbour);
+        print("Queueing " + neighbour);
         }
     }
 
