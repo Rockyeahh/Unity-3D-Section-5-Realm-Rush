@@ -11,6 +11,7 @@ public class Pathfinder : MonoBehaviour {
     Queue<Waypoint> queue = new Queue<Waypoint>();
     bool isRunning = true;
     Waypoint searchCenter; // the current searchCenter
+    List<Waypoint> path = new List<Waypoint>();
 
     Vector2Int[] directions =
     {
@@ -20,16 +21,31 @@ public class Pathfinder : MonoBehaviour {
         Vector2Int.left
     }; // Why is the ; here? How/why does it work here and not in other methods.
 
-    // Use this for initialization
-    void Start ()
+    public List<Waypoint> GetPath()
     {
         LoadBlocks();
         ColourStartAndEnd();
-        Pathfind();
-        //ExploreNeighbours();
+        BreadthFirstSearch();
+        CreathPath();
+        return path; // This was Ben's answer? WHAT? I suppose his talk about Getters and the enemy script just had fuck all to do with it or shjhw3gvkhvhjgst b,mhv FUCK THIS SHIT!
     }
 
-    private void Pathfind()
+    private void CreathPath()
+    {
+        path.Add(endWaypoint);
+
+        Waypoint previous = endWaypoint.exploredFrom;
+        while (previous != startWaypoint)
+        {
+            path.Add(previous); // Add all intermediate waypoints.
+            previous = previous.exploredFrom; // Tells previous to be exploredFrom rather than by endWaypoint.exploredFrom. Otherwise it stays in a loop.
+        }
+
+        path.Add(startWaypoint); // Adds the startWaypoint.
+        path.Reverse(); // Reverses the list.
+    }
+
+    private void BreadthFirstSearch()
     {
         queue.Enqueue(startWaypoint);
 
@@ -40,10 +56,6 @@ public class Pathfinder : MonoBehaviour {
             ExploreNeighbours();
             searchCenter.isExplored = true;
         }
-
-        // TODO: Work out path!
-        print("Finished pathfinding?");
-
     }
 
     private void HaltIfEndFound()
@@ -61,13 +73,9 @@ public class Pathfinder : MonoBehaviour {
         foreach (Vector2Int direction in directions)
         {
             Vector2Int neighbourCoordinates = searchCenter.GetGridPos() + direction; // Adds the current start position to the direction it can move in.
-            try
+            if (grid.ContainsKey(neighbourCoordinates))
             {
                 QueueNewNeighbours(neighbourCoordinates);
-            }
-            catch
-            {
-                // Do nothing for now.
             }
         }
     }
@@ -88,6 +96,7 @@ public class Pathfinder : MonoBehaviour {
 
     private void ColourStartAndEnd()
     {
+        // Could be done inside the Waypoint script.
         startWaypoint.SetTopColour(Color.black);
         endWaypoint.SetTopColour(Color.cyan);
     }
@@ -110,6 +119,5 @@ public class Pathfinder : MonoBehaviour {
                 grid.Add(waypoint.GetGridPos(), waypoint); // Adds the waypoint and the grid position of the waypoint to the waypoints Array.
             }
         }
-        //print("Loaded " + grid.Count + " Blocks");
     }
 }

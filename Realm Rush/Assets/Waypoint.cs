@@ -19,17 +19,6 @@ public class Waypoint : MonoBehaviour {
         return gridSize;
     }
 
-    void Update()
-    {
-        if (exploredFrom) // Update loop to set the colour of the waypoint blocks.
-        {
-           SetTopColour(Color.red);
-        } else
-        {
-            SetTopColour(Color.green);
-        }
-    }
-
     public Vector2Int GetGridPos()
     {
         return new Vector2Int( // Vectore2Int pairs two ints together.
