@@ -679,21 +679,6 @@ Prefab:
       propertyPath: targetEnemy
       value: 
       objectReference: {fileID: 1058877529}
-    - target: {fileID: 198744357376567668, guid: 1b176f8712b7bdc4792371c574714065,
-        type: 2}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198744357376567668, guid: 1b176f8712b7bdc4792371c574714065,
-        type: 2}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198744357376567668, guid: 1b176f8712b7bdc4792371c574714065,
-        type: 2}
-      propertyPath: CollisionModule.collisionMessages
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b176f8712b7bdc4792371c574714065, type: 2}
   m_IsPrefabParent: 0
@@ -1096,6 +1081,23 @@ Transform:
   m_PrefabParentObject: {fileID: 4834092430340768, guid: 8485349f044de37458bd3617a3712aec,
     type: 2}
   m_PrefabInternal: {fileID: 698939547}
+--- !u!1 &732137457 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1501539889613990, guid: 401cd20d637e94246a4d317558dd8ef2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1058877528}
+--- !u!65 &732137461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732137457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.000004, y: 14, z: 13.000003}
+  m_Center: {x: 0, y: 7, z: 0}
 --- !u!1 &795031208 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1214510353901872, guid: 401cd20d637e94246a4d317558dd8ef2,
