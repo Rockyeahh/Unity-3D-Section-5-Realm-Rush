@@ -1096,7 +1096,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15.000004, y: 14, z: 13.000003}
+  m_Size: {x: 26.17, y: 25.2, z: 30.2}
   m_Center: {x: 0, y: 7, z: 0}
 --- !u!1 &795031208 stripped
 GameObject:
@@ -1621,7 +1621,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0a75de75dc11f704693d92987e354e2c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -30,12 +30,14 @@ public class EnemyHealth : MonoBehaviour {
 
     private void ProcessHits()
     {
+        print("hit taken");
         enemyHealth--;
     }
 
     // Death method.
     private void EnemyDies()
     {
+        print("Dies");
         Destroy(gameObject);
     }
 
