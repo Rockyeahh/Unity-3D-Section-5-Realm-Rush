@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4455844829261038}
   - component: {fileID: 114190597978700820}
+  - component: {fileID: 54344728222122016}
+  - component: {fileID: 114721926486624462}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -37,6 +39,7 @@ GameObject:
   - component: {fileID: 4931736780328484}
   - component: {fileID: 33936775659900232}
   - component: {fileID: 23995693418645472}
+  - component: {fileID: 65125385711809420}
   m_Layer: 0
   m_Name: Enemy_A
   m_TagString: Untagged
@@ -113,6 +116,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501539889613990}
   m_Mesh: {fileID: 4300000, guid: 042c32b34794f584aa882ba5397f2c19, type: 3}
+--- !u!54 &54344728222122016
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214510353901872}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65125385711809420
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1501539889613990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 26.17, y: 25.2, z: 30.2}
+  m_Center: {x: 0, y: 7, z: 0}
 --- !u!114 &114190597978700820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,3 +154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c3eb551f0be5d499c668caa714ab3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114721926486624462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214510353901872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293abec624f262e4db36c23dbc38d7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 10

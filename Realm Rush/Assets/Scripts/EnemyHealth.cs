@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour {
 	
 	void Update () {
         // print Enemyhealth.
-        print(enemyHealth);
+       // print(enemyHealth);
 	}
 
     // particle collision method.
