@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour {
     //[SerializeField] Collider collisionMesh; // Ricks idea that is currently pointless.
 
     // Enemyhealth
-    [SerializeField] int enemyHealth = 10;
+    [SerializeField] int enemyHealth = 10; // Rick calls it hitPoints.
 
 	void Start () {
 		
@@ -17,9 +17,9 @@ public class EnemyHealth : MonoBehaviour {
     // particle collision method.
     void OnParticleCollision(GameObject other)
     {
-        print("Colliding");
+        //print("Colliding");
         ProcessHits();
-        if (enemyHealth < 1)
+        if (enemyHealth <= 1) //rick uses <= 1 whereas I was using < 1. I'll use ricks for now.
         {
             EnemyDies();
         }
@@ -29,6 +29,7 @@ public class EnemyHealth : MonoBehaviour {
     {
         print("hit taken");
         enemyHealth--;
+        print("current health is " + enemyHealth);
     }
 
     // Death method.
