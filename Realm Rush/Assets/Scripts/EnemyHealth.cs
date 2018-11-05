@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour {
 
+    //[SerializeField] Collider collisionMesh; // Ricks idea that is currently pointless.
+
     // Enemyhealth
     [SerializeField] int enemyHealth = 10;
 
 	void Start () {
 		
-	}
-	
-	void Update () {
-        // print Enemyhealth.
-       // print(enemyHealth);
 	}
 
     // particle collision method.

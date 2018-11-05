@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4455844829261038}
-  - component: {fileID: 114190597978700820}
   - component: {fileID: 54344728222122016}
+  - component: {fileID: 114190597978700820}
   - component: {fileID: 114721926486624462}
   m_Layer: 0
   m_Name: Enemy
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23995693418645472}
   - component: {fileID: 65125385711809420}
   m_Layer: 0
-  m_Name: Enemy_A
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1214510353901872}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -127,7 +127,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -165,4 +165,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293abec624f262e4db36c23dbc38d7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionMesh: {fileID: 0}
   enemyHealth: 10
