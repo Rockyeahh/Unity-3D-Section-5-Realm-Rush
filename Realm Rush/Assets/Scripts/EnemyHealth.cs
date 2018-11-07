@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour {
     {
         //print("Colliding");
         ProcessHits();
-        if (enemyHealth <= 1) //rick uses <= 1 whereas I was using < 1. I'll use ricks for now.
+        if (enemyHealth <= 0) //rick uses <= 1 whereas I was using < 1. I'll use ricks for now. Rick changed it to 0 but says < 1 would also work.
         {
             EnemyDies();
         }
