@@ -23,11 +23,19 @@ public class Pathfinder : MonoBehaviour {
 
     public List<Waypoint> GetPath()
     {
+        if (path.Count == 0) // Solves the "if not already calculated" issue in the Subtleties Of Spawning video.
+        {
+            CalculatePath();
+        }
+        return path;
+    }
+
+    private void CalculatePath()
+    {
         LoadBlocks();
         ColourStartAndEnd();
         BreadthFirstSearch();
         CreathPath();
-        return path; // This was Ben's answer? WHAT? I suppose his talk about Getters and the enemy script just had fuck all to do with it or shjhw3gvkhvhjgst b,mhv FUCK THIS SHIT!
     }
 
     private void CreathPath()
