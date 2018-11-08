@@ -27,9 +27,14 @@ public class Waypoint : MonoBehaviour {
         );
     }
 
-    public void SetTopColour(Color color)
+    void OnMouseOver()
     {
-        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>(); // Finds all the mesh renderers, that contain the colours.
-        topMeshRenderer.material.color = color; // Sets the colour to whatever colour has been sent to this method from the waypoint script.
+        print(gameObject.name);
     }
+
+    // public void SetTopColour(Color color)
+    //{
+    //  MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>(); // Finds all the mesh renderers, that contain the colours.
+    //topMeshRenderer.material.color = color; // Sets the colour to whatever colour has been sent to this method from the waypoint script.
+    //}
 }

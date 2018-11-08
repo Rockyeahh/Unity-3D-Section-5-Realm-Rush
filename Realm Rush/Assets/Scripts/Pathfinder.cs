@@ -33,7 +33,7 @@ public class Pathfinder : MonoBehaviour {
     private void CalculatePath()
     {
         LoadBlocks();
-        ColourStartAndEnd();
+ //       ColourStartAndEnd();
         BreadthFirstSearch();
         CreathPath();
     }
@@ -102,12 +102,12 @@ public class Pathfinder : MonoBehaviour {
         }
     }
 
-    private void ColourStartAndEnd()
-    {
+   // private void ColourStartAndEnd()
+   // {
         // Could be done inside the Waypoint script.
-        startWaypoint.SetTopColour(Color.black);
-        endWaypoint.SetTopColour(Color.cyan);
-    }
+     //   startWaypoint.SetTopColour(Color.black);
+    //    endWaypoint.SetTopColour(Color.cyan);
+  //  }
 
     private void LoadBlocks() // All the commented out code above lines is Ben's code.
     {
