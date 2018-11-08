@@ -5,23 +5,20 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
     [SerializeField] float secondsBetweenSpawns = 2f;
-    [SerializeField] GameObject enemyToSpawn;
+    [SerializeField] EnemyMovement enemyToSpawn;
 
-	// Use this for initialization
 	void Start () {
-        StartCoroutine(SpawnEnemies(secondsBetweenSpawns));
+        StartCoroutine(RepeatedlySpawnEnemies());
+        print("start coroutine enemy spawner");
 	}
 
-    IEnumerator SpawnEnemies() {if (secondsBetweenSpawns <= 0)
+    IEnumerator RepeatedlySpawnEnemies()
+    {
+        while (true) // true is true by default so using it make something spawn forever is fine and it's less typing than an if statement.
         {
-            yield return new WaitForSeconds(1);
-            //or just Instantiate (enemyToSpawn, Vector3 stuff, Quaternion.identity);
-            Instantiate(enemyToSpawn, new Vector3(0, 0, 0), Quaternion.identity); // May need a different transform.
+        Instantiate(enemyToSpawn, new Vector3(0, 0, 0), Quaternion.identity); // Needs a different transform.
+        yield return new WaitForSeconds(secondsBetweenSpawns);
+        print("instantiate enemies");
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

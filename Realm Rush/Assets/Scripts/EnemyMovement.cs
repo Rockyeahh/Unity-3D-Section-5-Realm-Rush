@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour {
         StartCoroutine(FollowPath(path));
 	}
 
-    IEnumerator FollowPath(List<Waypoint> path)
+    IEnumerator FollowPath(List<Waypoint> path) // I think you can access lists from any script.
     {
         print("Starting Patrol");
         foreach (Waypoint waypoint in path)

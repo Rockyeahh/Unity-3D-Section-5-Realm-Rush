@@ -499,11 +499,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 401cd20d637e94246a4d317558dd8ef2, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &420728145 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1214510353901872, guid: 401cd20d637e94246a4d317558dd8ef2,
-    type: 2}
-  m_PrefabInternal: {fileID: 420728144}
 --- !u!1001 &424077196
 Prefab:
   m_ObjectHideFlags: 0
@@ -2236,7 +2231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsBetweenSpawns: 2
-  enemyToSpawn: {fileID: 420728145}
+  enemyToSpawn: {fileID: 114190597978700820, guid: 401cd20d637e94246a4d317558dd8ef2,
+    type: 2}
 --- !u!1001 &1768253603
 Prefab:
   m_ObjectHideFlags: 0
