@@ -9,6 +9,7 @@ public class Waypoint : MonoBehaviour {
     // public is ok here as this is a data class.
     public bool isExplored = false;
     public Waypoint exploredFrom;
+    public bool isPlaceable = true;
 
     Vector2Int gridPos;
 
@@ -29,7 +30,10 @@ public class Waypoint : MonoBehaviour {
 
     void OnMouseOver()
     {
-        print(gameObject.name);
+        if (Input.GetMouseButtonDown(0)) // 0 = left click // I could also use the input manager.
+        {
+            print(gameObject.name + " clicked");
+        }
     }
 
     // public void SetTopColour(Color color)

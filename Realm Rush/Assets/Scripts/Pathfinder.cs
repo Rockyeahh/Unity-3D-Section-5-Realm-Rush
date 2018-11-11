@@ -41,16 +41,24 @@ public class Pathfinder : MonoBehaviour {
     private void CreathPath()
     {
         path.Add(endWaypoint);
+        endWaypoint.isPlaceable = false; // stops you being able to add Enemies directly onto the end goal.
 
         Waypoint previous = endWaypoint.exploredFrom;
         while (previous != startWaypoint)
         {
             path.Add(previous); // Add all intermediate waypoints.
+            previous.isPlaceable = false; // stops you placing Enemies onto the path? Why?
             previous = previous.exploredFrom; // Tells previous to be exploredFrom rather than by endWaypoint.exploredFrom. Otherwise it stays in a loop.
         }
 
         path.Add(startWaypoint); // Adds the startWaypoint.
+        startWaypoint.isPlaceable = false; // Why?
         path.Reverse(); // Reverses the list.
+    }
+
+    private void SetAsPath(Waypoint waypoint)
+    {
+
     }
 
     private void BreadthFirstSearch()
