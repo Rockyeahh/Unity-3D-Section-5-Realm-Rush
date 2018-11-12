@@ -40,24 +40,23 @@ public class Pathfinder : MonoBehaviour {
 
     private void CreathPath()
     {
-        path.Add(endWaypoint);
-        endWaypoint.isPlaceable = false; // stops you being able to add Enemies directly onto the end goal.
+        SetAsPath(endWaypoint); // Why is it endWaypoint all the time? Why not just waypoint? maybe it means the waypoint has ended rather than the last/end goal waypoint in the scene.
 
         Waypoint previous = endWaypoint.exploredFrom;
         while (previous != startWaypoint)
         {
-            path.Add(previous); // Add all intermediate waypoints.
-            previous.isPlaceable = false; // stops you placing Enemies onto the path? Why?
+            SetAsPath(previous);
             previous = previous.exploredFrom; // Tells previous to be exploredFrom rather than by endWaypoint.exploredFrom. Otherwise it stays in a loop.
         }
 
-        path.Add(startWaypoint); // Adds the startWaypoint.
-        startWaypoint.isPlaceable = false; // Why?
+        SetAsPath(endWaypoint);
         path.Reverse(); // Reverses the list.
     }
 
     private void SetAsPath(Waypoint waypoint)
     {
+        path.Add(waypoint);
+        waypoint.isPlaceable = false; // stops you being able to add Enemies directly onto the end goal.
 
     }
 

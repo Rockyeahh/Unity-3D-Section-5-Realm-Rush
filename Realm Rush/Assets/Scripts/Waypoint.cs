@@ -30,9 +30,12 @@ public class Waypoint : MonoBehaviour {
 
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0)) // 0 = left click // I could also use the input manager.
+        if (Input.GetMouseButtonDown(0) && isPlaceable == true) // 0 = left click // I could also use the input manager.
         {
-            print(gameObject.name + " clicked");
+            print(gameObject.name + " clicked & isPlaceable");
+        } else
+        {
+            print ("Can't place here.");
         }
     }
 
