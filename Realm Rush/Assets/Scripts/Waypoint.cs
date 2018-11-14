@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour {
 
-    [SerializeField] Color exploredColor;
-
     // public is ok here as this is a data class.
     public bool isExplored = false;
     public Waypoint exploredFrom;
     public bool isPlaceable = true;
+
+    [SerializeField] Color exploredColor;
+    [SerializeField] Tower towerPrefab;
 
     Vector2Int gridPos;
 
@@ -32,7 +33,9 @@ public class Waypoint : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0) && isPlaceable == true) // 0 = left click // I could also use the input manager.
         {
-            print(gameObject.name + " clicked & isPlaceable");
+            //print(gameObject.name + " clicked & isPlaceable");
+            Instantiate(towerPrefab, transform.position, Quaternion.identity);
+            isPlaceable = false;
         } else
         {
             print ("Can't place here.");

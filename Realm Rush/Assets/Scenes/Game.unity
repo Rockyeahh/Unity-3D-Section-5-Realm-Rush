@@ -930,6 +930,11 @@ Prefab:
       propertyPath: m_Name
       value: Block 1,0
       objectReference: {fileID: 0}
+    - target: {fileID: 102487410482840190, guid: 8485349f044de37458bd3617a3712aec,
+        type: 2}
+      propertyPath: m_Text
+      value: 1,0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8485349f044de37458bd3617a3712aec, type: 2}
   m_IsPrefabParent: 0
@@ -2074,31 +2079,6 @@ Prefab:
       propertyPath: m_Name
       value: Block 0,0
       objectReference: {fileID: 0}
-    - target: {fileID: 114836420323185952, guid: 8485349f044de37458bd3617a3712aec,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114836420323185952, guid: 8485349f044de37458bd3617a3712aec,
-        type: 2}
-      propertyPath: startPoint
-      value: 
-      objectReference: {fileID: 1703142460}
-    - target: {fileID: 23360109434861258, guid: 8485349f044de37458bd3617a3712aec,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e856dc7f5efc86f40bba8774bc6db4b9, type: 2}
-    - target: {fileID: 114836420323185952, guid: 8485349f044de37458bd3617a3712aec,
-        type: 2}
-      propertyPath: endPoint
-      value: 
-      objectReference: {fileID: 1830804539}
-    - target: {fileID: 102487410482840190, guid: 8485349f044de37458bd3617a3712aec,
-        type: 2}
-      propertyPath: m_Text
-      value: 0,0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8485349f044de37458bd3617a3712aec, type: 2}
   m_IsPrefabParent: 0
@@ -2320,12 +2300,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1830804539 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114692388901183726, guid: 8485349f044de37458bd3617a3712aec,
-    type: 2}
-  m_PrefabInternal: {fileID: 188995512}
-  m_Script: {fileID: 11500000, guid: aab967ad2d869ab4abde289ee06afd1e, type: 3}
 --- !u!1001 &1842571239
 Prefab:
   m_ObjectHideFlags: 0
