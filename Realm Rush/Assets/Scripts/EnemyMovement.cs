@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
-	void Start () {
+    void Start () {
         Pathfinder pathfinder = FindObjectOfType<Pathfinder>(); // Only works as long as we have one Pathfinder script in the scene.
         var path = pathfinder.GetPath(); // Change var to List of waypoints.
         StartCoroutine(FollowPath(path));
