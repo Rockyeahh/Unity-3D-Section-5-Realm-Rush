@@ -63,10 +63,12 @@ public class Pathfinder : MonoBehaviour {
     private void BreadthFirstSearch()
     {
         queue.Enqueue(startWaypoint);
+        Debug.Log("Start Waypoint " + startWaypoint);
 
         while (queue.Count > 0 && isRunning)
         {
             searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
+            Debug.Log("The queue " + queue); // this debug.log doesn't help.
             HaltIfEndFound();
             ExploreNeighbours();
             searchCenter.isExplored = true;

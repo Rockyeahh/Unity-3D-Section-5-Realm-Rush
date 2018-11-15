@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
+    [SerializeField] List<Waypoint> path;
+
     void Start () {
         Pathfinder pathfinder = FindObjectOfType<Pathfinder>(); // Only works as long as we have one Pathfinder script in the scene.
-        var path = pathfinder.GetPath(); // Change var to List of waypoints.
+        path = pathfinder.GetPath(); // Change var to List of waypoints.
         StartCoroutine(FollowPath(path));
 	}
 
@@ -16,7 +18,6 @@ public class EnemyMovement : MonoBehaviour {
         print("Starting Patrol");
         foreach (Waypoint waypoint in path)
         {
-
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(2f); // moves the enemy each second.
         }
