@@ -49,7 +49,7 @@ public class Pathfinder : MonoBehaviour {
             previous = previous.exploredFrom; // Tells previous to be exploredFrom rather than by endWaypoint.exploredFrom. Otherwise it stays in a loop.
         }
 
-        SetAsPath(endWaypoint);
+        SetAsPath(startWaypoint);
         path.Reverse(); // Reverses the list.
     }
 
@@ -63,12 +63,12 @@ public class Pathfinder : MonoBehaviour {
     private void BreadthFirstSearch()
     {
         queue.Enqueue(startWaypoint);
-        Debug.Log("Start Waypoint " + startWaypoint);
+        //Debug.Log("Start Waypoint " + startWaypoint);
 
         while (queue.Count > 0 && isRunning)
         {
             searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
-            Debug.Log("The queue " + queue); // this debug.log doesn't help.
+            //Debug.Log("The queue " + queue.Count);
             HaltIfEndFound();
             ExploreNeighbours();
             searchCenter.isExplored = true;
