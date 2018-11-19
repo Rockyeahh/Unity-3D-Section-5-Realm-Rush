@@ -7,17 +7,15 @@ public class EnemyHealth : MonoBehaviour {
 
     //[SerializeField] Collider collisionMesh; // Ricks idea that is currently pointless.
 
-    // Enemyhealth
     [SerializeField] int enemyHealth = 10; // Rick calls it hitPoints.
 
 	void Start () {
 		
 	}
 
-    // particle collision method.
     void OnParticleCollision(GameObject other)
     {
-        //print("Colliding");
+        print("Colliding");
         ProcessHits();
         if (enemyHealth <= 0) //Rick uses <= 1 whereas I was using < 1. I'll use ricks for now. Rick changed it to 0 but says < 1 would also work.
         {
@@ -27,15 +25,14 @@ public class EnemyHealth : MonoBehaviour {
 
     private void ProcessHits()
     {
-       // print("hit taken");
+        print("hit taken");
         enemyHealth--;
-        //print("current health is " + enemyHealth);
+        print("current health is " + enemyHealth);
     }
 
-    // Death method.
     private void EnemyDies()
     {
-        //print("Dies");
+        print("Dies");
         Destroy(gameObject);
     }
 
