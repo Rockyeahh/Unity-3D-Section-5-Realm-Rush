@@ -13,7 +13,6 @@ public class Tower : MonoBehaviour {
 
     void Update () {
         SetTargetEnemy();
-        print("Set target enemy");
         if (targetEnemy)
         {
         objectToPan.LookAt(targetEnemy);
@@ -46,7 +45,6 @@ public class Tower : MonoBehaviour {
     {
         var distToA = Vector3.Distance(transform.position, transformA.position);
         var distToB = Vector3.Distance(transform.position, transformB.position);
-        print("Get closest");
 
         if (distToA < distToB)
         {
@@ -58,7 +56,6 @@ public class Tower : MonoBehaviour {
 
     private void FireAtEnemy()
     {
-        print("FireAtEnemy");
         float distanceToEnemy = Vector3.Distance(targetEnemy.transform.position, gameObject.transform.position); // gameObjct.transform.position uses whatever gameObject this script is attached to.
         if (distanceToEnemy <= attackRange)
         {
@@ -72,15 +69,10 @@ public class Tower : MonoBehaviour {
 
     void Shoot(bool isActive)
     {
-        Debug.Log("Shoot method is called");
         var emissionModule = projectileParticle.emission;
         if (emissionModule.enabled != isActive)
         {
         emissionModule.enabled = isActive; // Why don't we use Particlesystem.Play and Stop?
-            Debug.Log(isActive);
-            print("emmision module is enabled");
         } else { return; }
-
-        //print("emmision module is enabled");
     }
 }

@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void Start () {
         StartCoroutine(RepeatedlySpawnEnemies());
-        print("start coroutine enemy spawner");
+        //print("start coroutine enemy spawner");
 	}
 
     IEnumerator RepeatedlySpawnEnemies()
@@ -18,9 +18,9 @@ public class EnemySpawner : MonoBehaviour {
         while (true) // true is true by default so using it make something spawn forever is fine and it's less typing than an if statement.
         {
         Instantiate(enemyToSpawn, transform.position, Quaternion.identity); // Does this child the Enemy game object?
-            Debug.Log( "Enemy spawn location  " + gameObject.transform.position);
+            //Debug.Log( "Enemy spawn location  " + gameObject.transform.position);
         yield return new WaitForSeconds(secondsBetweenSpawns);
-        print("instantiate enemies");
+        //print("instantiate enemies");
         }
     }
 }

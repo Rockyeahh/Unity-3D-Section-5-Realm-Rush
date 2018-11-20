@@ -8,8 +8,10 @@ public class EnemyHealth : MonoBehaviour {
     //[SerializeField] Collider collisionMesh; // Ricks idea that is currently pointless.
 
     [SerializeField] int enemyHealth = 10; // Rick calls it hitPoints.
+    [SerializeField] ParticleSystem hitParticlePrefab;
+    [SerializeField] ParticleSystem deathParticlePrefab;
 
-	void Start () {
+    void Start () {
 		
 	}
 
@@ -27,13 +29,18 @@ public class EnemyHealth : MonoBehaviour {
     {
         print("hit taken");
         enemyHealth--;
+        hitParticlePrefab.Play();
         print("current health is " + enemyHealth);
     }
 
     private void EnemyDies()
     {
+        var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+        vfx.Play();
         print("Dies");
         Destroy(gameObject);
+        // Destroy Death particles after set number of seconds.
+        // Destroy(deathParticlePrefab, 5);
     }
 
 }
