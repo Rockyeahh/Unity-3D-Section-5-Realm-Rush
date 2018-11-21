@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour {
 
     void OnParticleCollision(GameObject other)
     {
-        print("Colliding");
+        //print("Colliding");
         ProcessHits();
         if (enemyHealth <= 0) //Rick uses <= 1 whereas I was using < 1. I'll use ricks for now. Rick changed it to 0 but says < 1 would also work.
         {
@@ -27,17 +27,17 @@ public class EnemyHealth : MonoBehaviour {
 
     private void ProcessHits()
     {
-        print("hit taken");
+        //print("hit taken");
         enemyHealth--;
         hitParticlePrefab.Play();
-        print("current health is " + enemyHealth);
+        //print("current health is " + enemyHealth);
     }
 
     private void EnemyDies()
     {
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
-        print("Dies");
+        //print("Dies");
         Destroy(gameObject);
         // Destroy Death particles after set number of seconds.
         // Destroy(deathParticlePrefab, 5);
