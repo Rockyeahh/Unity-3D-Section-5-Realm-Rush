@@ -1,5 +1,4 @@
 sceneSetups:
-- path: G:/test realm rush/Unity-3D-Section-5-Realm-Rush-e385e1e50d3967f9200dac2e8d6e182ae820c8db/Realm
-    Rush/Assets/Scenes/Game.unity
-  isLoaded: 0
-  isActive: 0
+- path: Assets/Scenes/Game.unity
+  isLoaded: 1
+  isActive: 1
