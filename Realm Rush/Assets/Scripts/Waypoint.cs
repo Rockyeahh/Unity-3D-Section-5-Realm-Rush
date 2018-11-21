@@ -10,7 +10,6 @@ public class Waypoint : MonoBehaviour {
     public bool isPlaceable = true;
 
     [SerializeField] Color exploredColor;
-    [SerializeField] Tower towerPrefab;
 
     Vector2Int gridPos;
 
@@ -34,8 +33,7 @@ public class Waypoint : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && isPlaceable == true) // 0 = left click // I could also use the input manager.
         {
             //print(gameObject.name + " clicked & isPlaceable");
-            Instantiate(towerPrefab, transform.position, Quaternion.identity);
-            isPlaceable = false;
+            FindObjectOfType<TowerFactory>().AddTower(this);
         } else
         {
             print ("Can't place here.");
