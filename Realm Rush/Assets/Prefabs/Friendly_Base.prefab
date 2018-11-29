@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 10
+  playerHealthDecrease: 1
+  healthText: {fileID: 0}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -8,18 +9,29 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] float secondsBetweenSpawns = 2f;
     [SerializeField] EnemyMovement enemyToSpawn;
     [SerializeField] Transform enemyParentTransform;
+    [SerializeField] Text scoreText;
 
-	void Start () {
+    int enemyCount;
+
+    void Start () {
         StartCoroutine(RepeatedlySpawnEnemies());
-	}
+        scoreText.text = enemyCount.ToString();
+    }
 
     IEnumerator RepeatedlySpawnEnemies()
     {
         while (true) // true is true by default so using it make something spawn forever is fine and it's less typing than an if statement.
         {
-        var newEnemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity); // Does this child the Enemy game object?
+            AddScore();
+            var newEnemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity); // Does this child the Enemy game object?
             newEnemy.transform.parent = enemyParentTransform;
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }
+    }
+
+    private void AddScore()
+    {
+        enemyCount++;
+        scoreText.text = enemyCount.ToString();
     }
 }
