@@ -10,6 +10,15 @@ public class EnemyHealth : MonoBehaviour {
     [SerializeField] int enemyHealth = 10; // Rick calls it hitPoints.
     [SerializeField] ParticleSystem hitParticlePrefab;
     [SerializeField] ParticleSystem deathParticlePrefab;
+    [SerializeField] AudioClip enemyTakesAHit;
+    [SerializeField] AudioClip enemyDeathSFX;
+
+    AudioSource myAudioSource;
+
+    void Start()
+    {
+        myAudioSource = GetComponent<AudioSource>();
+    }
 
     void OnParticleCollision(GameObject other)
     {
@@ -24,12 +33,14 @@ public class EnemyHealth : MonoBehaviour {
     {
         enemyHealth--;
         hitParticlePrefab.Play();
+        myAudioSource.PlayOneShot(enemyTakesAHit);
     }
 
     private void EnemyDies()
     {
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
+        // Play SFX and then destroy SFX.
         Destroy(vfx.gameObject, vfx.main.duration);
 
         Destroy(gameObject); // destroy enemy
