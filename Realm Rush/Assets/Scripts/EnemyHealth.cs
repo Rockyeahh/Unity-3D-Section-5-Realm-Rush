@@ -40,10 +40,8 @@ public class EnemyHealth : MonoBehaviour {
     {
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
-        // Play SFX and then destroy SFX.
         Destroy(vfx.gameObject, vfx.main.duration);
-
+        AudioSource.PlayClipAtPoint(enemyDeathSFX, Camera.main.transform.position);
         Destroy(gameObject); // destroy enemy
     }
-
 }

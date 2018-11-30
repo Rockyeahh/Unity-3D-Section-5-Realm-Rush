@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293abec624f262e4db36c23dbc38d7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 10
+  enemyHealth: 5
   hitParticlePrefab: {fileID: 198780514664418988}
   deathParticlePrefab: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
     type: 2}

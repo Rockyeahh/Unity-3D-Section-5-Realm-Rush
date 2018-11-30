@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 581, y: 471}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 117
+  controlID: 51
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -365,7 +365,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 4cfbffff00000000
+    m_ExpandedIDs: c0faffffc2faffff4cfbffff00000000163100004c3100005a310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -415,14 +415,14 @@ MonoBehaviour:
     height: 439
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 127.25862961785205
+  lastFramingTime: 5309.6026462848595
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 37.633068, y: -52.811188, z: 66.61493}
+    m_Target: {x: 10, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 37.633068, y: -52.811188, z: 66.61493}
+    m_Value: {x: 10, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -452,11 +452,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.40804067, y: 0.0035632178, z: -0.0015924963, w: 0.91295546}
     speed: 2
-    m_Value: {x: -0.40804067, y: -0.0035632178, z: 0.0015924963, w: -0.9129554}
+    m_Value: {x: 0.40804067, y: 0.0035632178, z: -0.0015924963, w: 0.91295546}
   m_Size:
-    m_Target: 174.53249
+    m_Target: 94.02867
     speed: 2
-    m_Value: 174.53249
+    m_Value: 94.02867
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_AnimEditor: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2130
+  m_LastSelectedObjectID: -2344
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -534,11 +534,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Audio SFXs
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Audio SFXs
   m_LastFoldersGridSize: 96
   m_LastProjectPath: G:\Learn To Code With Unity Course 2.0\Learn To Code With Unity
     projects\Section 5\Unity-3D-Section-5-Realm-Rush\Realm Rush
@@ -546,9 +546,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a300000
-    m_LastClickedID: 12298
-    m_ExpandedIDs: 000000001e2c00006e2e0000ffffff7f
+    m_SelectedIDs: 122e0000
+    m_LastClickedID: 11794
+    m_ExpandedIDs: 000000001e2c0000762e0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +576,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e2c00006e2e0000
+    m_ExpandedIDs: 000000001e2c0000762e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
