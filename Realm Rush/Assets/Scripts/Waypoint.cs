@@ -39,10 +39,4 @@ public class Waypoint : MonoBehaviour {
             print ("Can't place here.");
         }
     }
-
-    // public void SetTopColour(Color color)
-    //{
-    //  MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>(); // Finds all the mesh renderers, that contain the colours.
-    //topMeshRenderer.material.color = color; // Sets the colour to whatever colour has been sent to this method from the waypoint script.
-    //}
 }

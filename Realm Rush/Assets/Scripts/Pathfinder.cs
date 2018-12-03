@@ -19,7 +19,7 @@ public class Pathfinder : MonoBehaviour {
         Vector2Int.right,
         Vector2Int.down,
         Vector2Int.left
-    }; // Why is the ; here? How/why does it work here and not in other methods.
+    };
 
     public List<Waypoint> GetPath()
     {
@@ -33,9 +33,38 @@ public class Pathfinder : MonoBehaviour {
     private void CalculatePath()
     {
         LoadBlocks();
- //       ColourStartAndEnd();
         BreadthFirstSearch();
         CreathPath();
+    }
+
+    private void LoadBlocks() // All the commented out code above lines is Ben's code.
+    {
+        Waypoint[] waypoints = GetComponentsInChildren<Waypoint>();
+        foreach (Waypoint waypoint in waypoints)
+        {
+            bool isOverlapping = grid.ContainsKey(waypoint.GetGridPos()); // Contains key checks if there is another key. How does it not check it's own key? Can it not see/find itself?
+            if (isOverlapping)
+            {
+                Debug.LogWarning("Skipping overlapping Block " + waypoint);
+            }
+            else
+            {
+                grid.Add(waypoint.GetGridPos(), waypoint); // Adds the waypoint and the grid position of the waypoint to the waypoints Array.
+            }
+        }
+    }
+
+    private void BreadthFirstSearch()
+    {
+        queue.Enqueue(startWaypoint);
+
+        while (queue.Count > 0 && isRunning)
+        {
+            searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
+            HaltIfEndFound();
+            ExploreNeighbours();
+            searchCenter.isExplored = true;
+        }
     }
 
     private void CreathPath()
@@ -51,28 +80,6 @@ public class Pathfinder : MonoBehaviour {
 
         SetAsPath(startWaypoint);
         path.Reverse(); // Reverses the list.
-    }
-
-    private void SetAsPath(Waypoint waypoint)
-    {
-        path.Add(waypoint);
-        waypoint.isPlaceable = false; // stops you being able to add Enemies directly onto the end goal.
-
-    }
-
-    private void BreadthFirstSearch()
-    {
-        queue.Enqueue(startWaypoint);
-        //Debug.Log("Start Waypoint " + startWaypoint);
-
-        while (queue.Count > 0 && isRunning)
-        {
-            searchCenter = queue.Dequeue(); // searchCenter means search the surrounding directions? No maybe it's just a thing that stores the dequeing of the queue and he's named it badly.
-            //Debug.Log("The queue " + queue.Count);
-            HaltIfEndFound();
-            ExploreNeighbours();
-            searchCenter.isExplored = true;
-        }
     }
 
     private void HaltIfEndFound()
@@ -97,6 +104,13 @@ public class Pathfinder : MonoBehaviour {
         }
     }
 
+    private void SetAsPath(Waypoint waypoint)
+    {
+        path.Add(waypoint);
+        waypoint.isPlaceable = false; // stops you being able to add Enemies directly onto the end goal.
+
+    }
+
     private void QueueNewNeighbours(Vector2Int neighbourCoordinates)
     {
         Waypoint neighbour = grid[neighbourCoordinates];
@@ -108,33 +122,6 @@ public class Pathfinder : MonoBehaviour {
         {
         queue.Enqueue(neighbour);
         neighbour.exploredFrom = searchCenter;
-        }
-    }
-
-   // private void ColourStartAndEnd()
-   // {
-        // Could be done inside the Waypoint script.
-     //   startWaypoint.SetTopColour(Color.black);
-    //    endWaypoint.SetTopColour(Color.cyan);
-  //  }
-
-    private void LoadBlocks() // All the commented out code above lines is Ben's code.
-    {
-        //var waypoints = FindObjectOfType<Waypoint>();
-        Waypoint[] waypoints = GetComponentsInChildren<Waypoint>();
-        foreach (Waypoint waypoint in waypoints)
-        {
-            // var gridPos = waypoint.GetGridPos();
-            // if (grid.ContainsKey(gridPos))
-            bool isOverlapping = grid.ContainsKey(waypoint.GetGridPos()); // Contains key checks if there is another key. How does it not check it's own key? Can it not see/find itself?
-            if (isOverlapping)
-            {
-                Debug.LogWarning("Skipping overlapping Block " + waypoint);
-            } else
-            {
-                // grid.Add(gridPos, waypoint);
-                grid.Add(waypoint.GetGridPos(), waypoint); // Adds the waypoint and the grid position of the waypoint to the waypoints Array.
-            }
         }
     }
 }

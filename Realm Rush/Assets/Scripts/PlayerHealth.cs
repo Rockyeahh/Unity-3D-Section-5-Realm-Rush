@@ -11,9 +11,12 @@ public class PlayerHealth : MonoBehaviour {
     [SerializeField] Text healthText;
     [SerializeField] AudioClip playerDamageSFX;
 
+    private LevelManager levelManager;
+
     void Start()
     {
         healthText.text = playerHealth.ToString();
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
     }
 
     void OnTriggerEnter(Collider collider)
@@ -30,5 +33,6 @@ public class PlayerHealth : MonoBehaviour {
     private void PlayerDies()
     {
         print("Player dies");
+        levelManager.LoadScene("03 Lose Screen");
     }
 }
